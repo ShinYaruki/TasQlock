@@ -53,7 +53,7 @@
 
 # DB設計
 
-
+追記予定
 
 # 参考サイト
 http://php.o0o0.jp/article/jquery-countup
