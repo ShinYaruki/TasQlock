@@ -1,8 +1,8 @@
 .right-schedules
   本日のスケジュール(簡易)
-  - @newsche.each do |sche|
-    = link_to edit_schedule_path(sche.id) do
-      - if sche.done == 1
+  - @schedule_list.each do |sche|
+    = link_to edit_task_path(sche.id) do
+      - if sche.done == true
         .right-schedule-done
           .right-schedule__top
             - if sche.tag_id == 1

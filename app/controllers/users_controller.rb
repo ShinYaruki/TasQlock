@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to today_schedules_path
+      redirect_to today_tasks_path
       flash[:notice] = "新規登録が完了しました"
     else
       flash[:alert] = "新規登録エラー：各項目を正しく入力して下さい"

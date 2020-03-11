@@ -1,1 +1,0 @@
-json.done @schedule.done

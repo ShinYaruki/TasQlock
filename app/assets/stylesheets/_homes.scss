@@ -75,7 +75,7 @@ header {
     }
   &__right {
     width:40%;
-    height:400px;
+    height:440px;
     margin: 60px 20px 0 20px;
     background-color: #EEEEEE;
     border-radius: 10px;
@@ -113,6 +113,10 @@ header {
   padding-left: 3px;
 }
 
+input.font-reset {
+  font-family: inherit;
+}
+
 input {
   text-align: start;
 }
@@ -129,6 +133,10 @@ input {
   font-size: 14px;
   color:#FFF;
   text-align: center;
+}
+
+.btn-submit:focus {
+  outline: none;
 }
 
 .top,img {
@@ -167,12 +175,22 @@ input {
 
 .today,.already {
   margin-top: 20px;
-  display: flex;
   justify-content: center;
   &-sub {
     color: blue;
     cursor: pointer;
   }
+}
+
+.today-sub,.already-sub {
+  width:66%;
+  background-color:#005FFF;
+  height:30px;
+  line-height: 30px;
+  font-size: 14px;
+  color:#FFF;
+  margin: 15px auto;
+  cursor: pointer
 }
 
 .signup {

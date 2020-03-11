@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   # トップページ用のルーティング
   resources :homes , only: [:index] 
   # スケジュールページ用のルーティング
-  resources :schedules , only: [:new, :create, :edit, :update, :destroy] do
+  resources :tasks , only: [:new, :create, :edit, :update, :destroy] do
     collection do
       get 'today'
       get 'calendar'
     end
   end
-  post 'schedules/:id/done', to: 'schedules#done', as: 'done'
+  post 'tasks/:id/done', to: 'tasks#done', as: 'done'
   
   resources :memos, only: [:new, :create, :destroy]
   post "/memos/create", to: "memos#create"

@@ -14,13 +14,13 @@
           = content_tag(:div, value, class: key)
       .header
         .header__left
-          = link_to "TasQlock", today_schedules_path, class: "blue"
+          = link_to "TasQlock", today_tasks_path, class: "blue"
         .header__middle
           #date
         .header__right
           - if user_signed_in?
             %ul.list-name
-              = current_user.name
+              = @current_user.name
               %li.list-logout
                 = link_to logout_path, method: :delete, class: "black" do
                   = icon("fas", "sign-out-alt")

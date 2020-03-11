@@ -1,40 +1,40 @@
 .main-wrapper
   .new-top
-    - if controller.controller_name == "schedules" && controller.action_name == "new"
+    - if controller.controller_name == "tasks" && controller.action_name == "new"
       スケジュール登録
-    - elsif controller.controller_name == "schedules" && controller.action_name == "edit"
+    - elsif controller.controller_name == "tasks" && controller.action_name == "edit"
       スケジュール編集
   .new-content
-    = form_with(model: @schedule, local: true, id: "new_schedule") do |f|
-      - if controller.controller_name == "schedules" && controller.action_name == "new"
+    = form_with(model: @task, local: true, id: "new_schedule") do |f|
+      - if controller.controller_name == "tasks" && controller.action_name == "new"
         .new-date
           %span ▼作業日
           %span{style: "color:#FF0000; font-size: 12px"} ※必須
           %br
-          = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-control__middle"
-      - elsif controller.controller_name == "schedules" && controller.action_name == "edit"
+          = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-control__middle font-reset"
+      - elsif controller.controller_name == "tasks" && controller.action_name == "edit"
         .new-date
           %span ▼作業日
           %span{style: "color:#FF0000; font-size: 12px"} ※必須
           %br
-          = f.date_field :date, value: @schedule.date, class: "form-control__middle"
+          = f.date_field :date, value: @task.date, class: "form-control__middle"
       .new-time__title
         %span ▼作業予定時刻(hh:mm)
         %span{style: "color:#FF0000; font-size: 12px"} ※必須
         %br
         .new-time
-          - if controller.controller_name == "schedules" && controller.action_name == "new"
+          - if controller.controller_name == "tasks" && controller.action_name == "new"
             .new-starttime
               = f.text_field :starttime, class: 'form-control__short', placeholder: "例)09:00"
             %p  〜 
             .new-finishtime
               = f.text_field :finishtime, class: 'form-control__short', placeholder: "例)10:00"            
-          - elsif controller.controller_name == "schedules" && controller.action_name == "edit"
+          - elsif controller.controller_name == "tasks" && controller.action_name == "edit"
             .new-starttime
-              = f.text_field :starttime, value: @schedule.starttime.strftime("%H:%M"), class: 'form-control__short', placeholder: "例)09:00"
+              = f.text_field :starttime, value: @task.starttime.strftime("%H:%M"), class: 'form-control__short', placeholder: "例)09:00"
             %p  〜 
             .new-finishtime
-              = f.text_field :finishtime, value: @schedule.finishtime.strftime("%H:%M"), class: 'form-control__short', placeholder: "例)10:00"
+              = f.text_field :finishtime, value: @task.finishtime.strftime("%H:%M"), class: 'form-control__short', placeholder: "例)10:00"
       .new-tag.lineheight10
         %span ▼カテゴリー
         %span{style: "color:#FF0000; font-size: 12px"} ※必須
@@ -51,12 +51,12 @@
       .new-schedule.lineheight10
         %p ▼スケジュール内容
         = f.text_area :description, class: 'form-control__large', placeholder: "作業内容等を入力"
-      - if controller.controller_name == "schedules" && controller.action_name == "new"
+      - if controller.controller_name == "tasks" && controller.action_name == "new"
         .new-submit
           = f.submit '登録', class: 'btn-post'
-      - elsif controller.controller_name == "schedules" && controller.action_name == "edit"
+      - elsif controller.controller_name == "tasks" && controller.action_name == "edit"
         .new-submit
           = f.submit '編集', class: 'btn-edit'
-          = link_to("/schedules/#{@schedule.id}", method: :delete) do
+          = link_to("/tasks/#{@task.id}", method: :delete) do
             .btn-delete.confirm
               削除
