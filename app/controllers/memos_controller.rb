@@ -21,7 +21,7 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     @memo.destroy
     respond_to do |format|
-      # format.html {redirect_to today_schedules_path}
+      format.html {redirect_to today_schedules_path}
       format.json
     end
   end

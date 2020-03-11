@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_many :schedules
+  has_many :tasks
 end

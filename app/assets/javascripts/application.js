@@ -37,7 +37,7 @@ $(function(){
         
           form.method = 'GET';
           // 現在開発環境である為localhostに飛ばしている
-          form.action = 'http://localhost:3000/schedules/calendar/';
+          form.action = '/tasks/calendar/';
           input.type = 'hidden'; //フォームは必要ないので非表示
           input.name = 'text';
           input.value = value;
@@ -58,7 +58,7 @@ $(function(){
   // };
 
   // ログインし、スケジュールページに飛んだらカレンダーを表示
-  if (window.location.href.match(/schedules/)){
+  if (window.location.href.match(/tasks/)){
     eventCalendar();
   }
 
@@ -71,13 +71,13 @@ $(function(){
 
   function calendarImage(){
     // カレンダーの中でイベントが登録されている日にイメージを追加する。
-    if(window.location.href.match(/\/schedules/)){
+    if(window.location.href.match(/\/tasks/)){
 
     }
   }
   
   // カレンダーをクリックした時に背景色のcssを付与する関数を実行
-  if(window.location.href.match(/\/schedules\/calendar/)){
+  if(window.location.href.match(/\/tasks\/calendar/)){
     // 選択した日が当月であった場合そのまま色付けを発火
     calendarColor();
     // 選択した日が当月でなかった場合、カレンダーの<>ボタンをクリックした時にも発火

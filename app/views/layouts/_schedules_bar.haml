@@ -9,10 +9,10 @@
     #today4
       日のスケジュール確認
   .schedule-contents
-    - if @schedules.present?
-      - @schedules.each do |schedule|
-        - if schedule.done == 1
-          = link_to edit_schedule_path(schedule.id) do
+    - if @tasks.present?
+      - @tasks.each do |schedule|
+        - if schedule.done == true
+          = link_to edit_task_path(schedule.id) do
             .schedule-content-done
               .schedule-content__left
                 .schedule-top
@@ -47,7 +47,7 @@
         - else
           .schedule-content
             .schedule-content__left
-              = link_to edit_schedule_path(schedule.id) do
+              = link_to edit_task_path(schedule.id) do
                 .schedule-top
                   - if schedule.tag_id == 1
                     .scheduletag__1
@@ -77,11 +77,11 @@
                   = simple_format(schedule.description)
             .schedule-content__right
               = button_to "完了", done_path(schedule.id), method: :post, class: "btn-done"
-    -  elsif @schedules.blank?
+    -  elsif @tasks.blank?
       .index-date
         まだスケジュールを登録していないようです。
         %br
         下記ボタンより新規登録を行いましょう！
-        = link_to new_schedule_path, class:"white" do
+        = link_to new_task_path, class:"white" do
           .index-new
             本日のスケジュールを作成する

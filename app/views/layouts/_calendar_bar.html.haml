@@ -71,6 +71,6 @@
                 = schedule.finishtime.strftime("%H:%M")
             .schedule-description
               = simple_format(schedule.description)
-    -  elsif @schedules.blank?
+    -  elsif @cale.blank?
       .index-date
         スケジュールは登録されていません。

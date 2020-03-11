@@ -17,13 +17,7 @@
         .login-top
           ログイン
         .login__contents
-          = form_for :session, url: login_path do |f|
-            -# ユーザアカウント
-            .form-group
-              = f.label :accountname, class: "form-title"
-              %br
-              = f.text_field :name, class: 'form-control'
-              %br          
+          = form_for :session, url: login_path do |f|     
             -# メールアドレス
             .form-group
               = f.label :email, class: "form-title"
@@ -46,9 +40,9 @@
         -#   = image_tag "/images/btn_facebook_signin.png", {class: "facebook"}
         .today
           .today-main
-            今日から頑張りたいあなたは
+            今日から頑張りたいあなたはこちら
           .today-sub
-            こちら
+            新規登録
       -# 新規登録画面
       .signup
         .signup-top
@@ -90,9 +84,9 @@
 
         .already
           .already-main
-            登録済みで頑張っているあなたは
+            登録済みで頑張っているあなたはこちら
           .already-sub
-            こちら
+            ログイン
 .introduction-about
   .about-top.blue
     = icon("fas", "question-circle")
@@ -125,4 +119,4 @@
 .footer
   .footer-left
   .footer-right
-    product by 
+    product by ShinYaruki
