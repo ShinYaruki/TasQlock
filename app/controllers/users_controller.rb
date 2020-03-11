@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       redirect_to today_schedules_path
       flash[:notice] = "新規登録が完了しました"
     else
+      # ここもエラーメッセージ引っ張ってきたうえで、どう間違ってるかをユーザーに伝えてあげると親切ですね
       flash[:alert] = "新規登録エラー：各項目を正しく入力して下さい"
       redirect_to root_path
     end

@@ -20,6 +20,7 @@
         .header__right
           - if user_signed_in?
             %ul.list-name
+              // ここでcurrent_userメソッドを使っているけど、user_signed_in?を呼んだ時点で@current_userにユーザーがいるのでそっちを使ったほうが、流れとして違和感がない
               = current_user.name
               %li.list-logout
                 = link_to logout_path, method: :delete, class: "black" do
