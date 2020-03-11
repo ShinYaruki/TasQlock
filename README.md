@@ -1,5 +1,4 @@
-<img width="1440" alt="TasQlock_TopPage" src="https://user-images.githubusercontent.com/47615811/76326367-debea100-632b-11ea-9058-3bedc008888a.png">
-
+<img width="1440" alt="スクリーンショット 2020-03-11 23 25 08" src="https://user-images.githubusercontent.com/47615811/76427417-9a94d480-63ef-11ea-8afc-a957b6885574.png">
 
 # TasQlock
 本アプリケーションは作業の効率化を趣旨としたタスク管理アプリおり、ユーザ登録を行うことでご利用頂けるアプリケーションとなっております。
