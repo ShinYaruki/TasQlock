@@ -55,7 +55,8 @@ http://18.178.173.206/
 
 # DB設計
 
-追記予定
+<img width="778" alt="スクリーンショット 2020-03-16 15 03 56" src="https://user-images.githubusercontent.com/47615811/76727456-6b87b580-6797-11ea-9ffc-21390a2ba938.png">
+
 
 # 参考サイト
 http://php.o0o0.jp/article/jquery-countup  
