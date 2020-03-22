@@ -75,3 +75,4 @@ gem "font-awesome-sass"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'pry-rails'
+gem 'rails-i18n'

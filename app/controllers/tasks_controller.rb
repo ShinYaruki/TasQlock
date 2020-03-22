@@ -16,8 +16,8 @@ class TasksController < ApplicationController
           format.json
         end 
       else
-        flash[:alert] = "必須項目を入力して下さい"
-        redirect_to new_schedule_path
+        flash[:alert] = @task.errors.full_messages
+        redirect_to new_task_path
       end
   end
 
@@ -29,19 +29,19 @@ class TasksController < ApplicationController
   end
 
   def update
-    schedule = Task.find(params[:id])
-      if schedule.update(schedule_params)
+    @task = Task.find(params[:id])
+      if @task.update(schedule_params)
         redirect_to today_tasks_path
         flash[:notice] = "スケジュールを編集しました"
       else
+        flash[:alert] = @task.errors.full_messages
         redirect_to edit_task_path
-        flash[:alert] = "必須項目を入力して下さい"
       end
   end
 
   def destroy
-    schedule = Task.find(params[:id])
-    schedule.destroy
+    task = Task.find(params[:id])
+    task.destroy
     flash[:notice] = "スケジュールを削除しました"
     redirect_to today_tasks_path
   end

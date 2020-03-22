@@ -98,6 +98,7 @@ header {
 }
 
 .form-group {
+  position: relative;
   height:100%;
   margin:0 17%;
   text-align: left;
@@ -109,8 +110,16 @@ header {
 }
 
 .form-control {
+  position: relative;
   width:100%;
   padding-left: 3px;
+}
+
+.form-password {
+  position: absolute;
+  bottom: 28px;
+  right: 0;
+  font-size: 12px;
 }
 
 input.font-reset {
