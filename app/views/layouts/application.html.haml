@@ -9,9 +9,7 @@
     = javascript_include_tag 'application'
   %body
     %header
-      .notifications.time-limit
-        - flash.each do |key, value|
-          = content_tag(:div, value, class: key)
+      = render "layouts/notification"
       .header
         .header__left
           = link_to "TasQlock", today_tasks_path, class: "blue"

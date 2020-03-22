@@ -20,15 +20,17 @@
           = form_for :session, url: login_path do |f|     
             -# メールアドレス
             .form-group
-              = f.label :email, class: "form-title"
+              = f.label :メールアドレス, class: "form-title"
               %br
               = f.email_field :email, class: 'form-control'
               %br
               -# パスワード
             .form-group
-              = f.label :password, class: "form-title"
+              = f.label :パスワード, class: "form-title"
               %br
               = f.password_field :password, class: 'form-control'
+              .form-password
+                = icon("fas","eye-slash")
               %br
             -# ログイン
             .form-submit
@@ -51,29 +53,24 @@
           = form_with(model: @user, url: users_path, local: true) do |f|
             -# ユーザアカウント
             .form-group
-              = f.label :accountname, class: "form-title"
+              = f.label :アカウント名, class: "form-title"
               %br
               = f.text_field :name, class: 'form-control'
               %br          
             -# メールアドレス
             .form-group
-              = f.label :email, class: "form-title"
+              = f.label :メールアドレス, class: "form-title"
               %br
               = f.email_field :email, class: 'form-control'
               %br
               -# パスワード
             .form-group
-              = f.label :password, class: "form-title"
+              = f.label :パスワード, class: "form-title"
               %br
               = f.password_field :password, class: 'form-control'
+              .form-password
+                = icon("fas","eye-slash")
               %br
-              -# パスワード確認
-            .form-group
-              = f.label :password_confirmaion, class: "form-title"
-              %br
-              = f.password_field :password_confirmation, class: 'form-control'
-              %br
-            -# ログイン
             .form-submit
               = f.submit "Signup", class: "btn-submit"
 
