@@ -51,6 +51,12 @@
       .new-schedule.lineheight10
         %p ▼スケジュール内容
         = f.text_area :description, class: 'form-control__large', placeholder: "作業内容等を入力"
+      .new-done
+        %p ▼スケジュール進捗
+        = f.radio_button :done, :false, checked: true
+        = f.label :done, "未完了"
+        = f.radio_button :done, :true
+        = f.label :done, "完了済"
       - if controller.controller_name == "tasks" && controller.action_name == "new"
         .new-submit
           = f.submit '登録', class: 'btn-post'
