@@ -13,64 +13,74 @@
   .schedule-contents
     - if @cale.present?
       - @cale.each do |schedule|
-        - if schedule.done == 1
-          .schedule-content-calendar-done
-            .schedule-top
-              - if schedule.tag_id == 1
-                .scheduletag__1
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 2
-                .scheduletag__2
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 3
-                .scheduletag__3
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 4
-                .scheduletag__4
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 5
-                .scheduletag__5
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 6
-                .scheduletag__6
-                  = schedule.tag.name
-              .schedule-title
-                = schedule.title
-              .schedule-time
-                = schedule.starttime.strftime("%H:%M")
-                %p 〜
-                = schedule.finishtime.strftime("%H:%M")
-            .schedule-description
-              = simple_format(schedule.description)
+        - if schedule.done == true
+          .schedule-content
+            .schedule-content__left-done
+              .schedule-top
+                - if schedule.tag_id == 1
+                  .scheduletag__1
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 2
+                  .scheduletag__2
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 3
+                  .scheduletag__3
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 4
+                  .scheduletag__4
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 5
+                  .scheduletag__5
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 6
+                  .scheduletag__6
+                    = schedule.tag.name
+                .schedule-title
+                  = schedule.title
+                .schedule-time
+                  = schedule.starttime.strftime("%H:%M")
+                  %p 〜
+                  = schedule.finishtime.strftime("%H:%M")
+              .schedule-description
+                = simple_format(schedule.description)
+            .schedule-content__right
+              = button_to "編集",edit_task_path(schedule.id), class: "btn-done", method: :get
+              .height8
+              = button_to "完了",calendardone_path(schedule.id), class: "btn-finish", id: "reload", method: :post, disabled: true
         - else
-          .schedule-content-calendar
-            .schedule-top
-              - if schedule.tag_id == 1
-                .scheduletag__1
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 2
-                .scheduletag__2
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 3
-                .scheduletag__3
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 4
-                .scheduletag__4
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 5
-                .scheduletag__5
-                  = schedule.tag.name
-              - elsif schedule.tag_id == 6
-                .scheduletag__6
-                  = schedule.tag.name
-              .schedule-title
-                = schedule.title
-              .schedule-time
-                = schedule.starttime.strftime("%H:%M")
-                %p 〜
-                = schedule.finishtime.strftime("%H:%M")
-            .schedule-description
-              = simple_format(schedule.description)
+          .schedule-content
+            .schedule-content__left
+              .schedule-top
+                - if schedule.tag_id == 1
+                  .scheduletag__1
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 2
+                  .scheduletag__2
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 3
+                  .scheduletag__3
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 4
+                  .scheduletag__4
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 5
+                  .scheduletag__5
+                    = schedule.tag.name
+                - elsif schedule.tag_id == 6
+                  .scheduletag__6
+                    = schedule.tag.name
+                .schedule-title
+                  = schedule.title
+                .schedule-time
+                  = schedule.starttime.strftime("%H:%M")
+                  %p 〜
+                  = schedule.finishtime.strftime("%H:%M")
+              .schedule-description
+                = simple_format(schedule.description)
+            .schedule-content__right
+              = button_to "編集",edit_task_path(schedule.id), class: "btn-done", method: :get
+              .height8
+              = button_to "完了",calendardone_path(schedule.id), class: "btn-done", id: "reload", method: :post
     -  elsif @cale.blank?
       .index-date
         スケジュールは登録されていません。

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   end
   post 'tasks/:id/done', to: 'tasks#done', as: 'done'
+  post 'tasks/:id/calendardone', to: 'tasks#calendardone', as: 'calendardone'
   
   resources :memos, only: [:new, :create, :destroy]
   post "/memos/create", to: "memos#create"

@@ -15,20 +15,33 @@
   }
   &__right{
     width: 9%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.schedule-content-done {
+.schedule-content__right > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.height8 {
+  height: 8px;
+}
+
+.schedule-content__left-done {
+  width: 91%;
   position: relative;
   height: 100%;
-  display: flex;
   box-sizing: border-box;
-  margin:10px;
   background-color: rgb(34, 34, 34);
 }
 
-.schedule-content-done::after {
+.schedule-content__left-done::after {
   content: '';
   background-color: rgba(0,0,0,.4);
   position: absolute;
@@ -36,11 +49,6 @@
   right: 0;
   top: 0;
   bottom: 0;
-}
-
-.schedule-content-done:hover {
-  cursor: pointer;
-  outline: 1px solid blue;
 }
 
 .schedule-content-calendar {
@@ -67,11 +75,6 @@
   right: 0;
   top: 0;
   bottom: 0;
-}
-
-.schedule-content__left:hover {
-  cursor: pointer;
-  outline: 1px solid blue;
 }
 
 .schedule-top {
@@ -153,6 +156,7 @@
 }
 
 .schedule-description {
+  min-height: 55px;
   text-align: left;
   padding-left: 10px;
   background-color: #FFF;
@@ -161,8 +165,8 @@
 }
 
 .button_to .btn-finish {
-  margin: 0 auto;
-  padding: 3px 10px;
+  height: 28px;
+  padding: 4px 11px;
   background-color: grey;
   border-radius: 15px;
   text-align: center;
@@ -170,11 +174,12 @@
   font-size: 12px;
   font-weight: bold;
   outline: none;
+  box-sizing: border-box;
 }
 
 .button_to .btn-done {
-  margin: 0 auto;
-  padding: 3px 10px;
+  height: 28px;
+  padding: 4px 11px;
   background-color: #0066FF;
   border-radius: 15px;
   text-align: center;
@@ -183,6 +188,7 @@
   font-size: 12px;
   font-weight: bold;
   outline: none;
+  box-sizing: border-box;
 }
 
 .btn-done:active {
