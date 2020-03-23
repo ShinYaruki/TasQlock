@@ -11,10 +11,11 @@ class TasksController < ApplicationController
     @task = Task.new(schedule_params)
       if @task.save
         flash[:notice] = "スケジュールを登録しました"
-        respond_to do |format|
-          format.html {redirect_to new_task_path}
-          format.json
-        end 
+        redirect_to new_task_path
+        # respond_to do |format| 非同期通信でcreateを発火予定だったが保留
+        #   format.html {redirect_to new_task_path}
+        #   format.json
+        # end 
       else
         flash[:alert] = @task.errors.full_messages
         redirect_to new_task_path
@@ -66,11 +67,19 @@ class TasksController < ApplicationController
   def done
     @task = Task.find(params[:id])
     @task.update(done: true)
-    respond_to do |format|
-      format.html {redirect_to today_tasks_path}
-      format.json
-    end 
+    redirect_to today_tasks_path
+    # respond_to do |format| 非同期通信でdoneを発火予定だったが保留
+    #   format.html {redirect_to today_tasks_path}
+    #   format.json
+    # end 
     flash[:notice] = "スケジュールが完了しました"
+  end
+
+  def calendardone
+    @task = Task.find(params[:id])
+    @task.update(done: true)
+    redirect_to today_tasks_path
+    flash[:notice] = "#{@task.date}のスケジュールが完了しました"
   end
 
   private
