@@ -24,6 +24,7 @@ http://18.178.173.206/
 - ruby 2.5.1
 - Ruby on Rails 5.2.4
 - VSCode（Visual Studio Code）
+- AWS(EC2,Route 53)
 
 # 詳しい説明
 ### ■スケジュール登録
