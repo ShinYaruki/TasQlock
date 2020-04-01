@@ -48,7 +48,7 @@ class TasksController < ApplicationController
   end
 
   def today
-    date = Time.now.to_s.slice(0..9)
+    date = Time.zone.now.to_s.slice(0..9)
     @month = date.slice(5..6)
     @day = date.slice(8..9)
     @tasks = Task.where(date: Time.zone.now.beginning_of_day).where(user_id: current_user.id).order(starttime: "asc")
