@@ -1,7 +1,7 @@
 <img width="1440" alt="スクリーンショット 2020-03-11 23 25 08" src="https://user-images.githubusercontent.com/47615811/76427417-9a94d480-63ef-11ea-8afc-a957b6885574.png">
 
 # URL
-http://18.178.173.206/
+http://www.tasqlock.com/
 
 # TasQlock
 本アプリケーションは作業の効率化を趣旨としたタスク管理アプリであり、ユーザ登録を行うことでご利用頂けるアプリケーションとなっております。
@@ -24,6 +24,7 @@ http://18.178.173.206/
 - ruby 2.5.1
 - Ruby on Rails 5.2.4
 - VSCode（Visual Studio Code）
+- AWS(EC2,Route 53)
 
 # 詳しい説明
 ### ■スケジュール登録
