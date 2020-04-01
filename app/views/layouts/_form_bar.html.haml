@@ -11,7 +11,7 @@
           %span ▼作業日
           %span{style: "color:#FF0000; font-size: 12px"} ※必須
           %br
-          = f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-control__middle font-reset"
+          = f.date_field :date, value: Time.zone.now.strftime("%Y-%m-%d"), class: "form-control__middle font-reset"
       - elsif controller.controller_name == "tasks" && controller.action_name == "edit"
         .new-date
           %span ▼作業日
