@@ -9,7 +9,7 @@ class MemosController < ApplicationController
 
   def create
     @memo = Memo.new(memo_params)
-    @memo.date = Time.now.to_s.slice(0..9)
+    @memo.date = Time.zone.now.to_s.slice(0..9)
     @memo.save
     respond_to do |format|
       format.html {redirect_to today_tasks_path}
