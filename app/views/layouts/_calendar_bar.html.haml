@@ -11,8 +11,8 @@
     #cale4
       日のスケジュール確認
   .schedule-contents
-    - if @cale.present?
-      - @cale.each do |schedule|
+    - if @calendar.present?
+      - @calendar.each do |schedule|
         - if schedule.done == true
           .schedule-content
             .schedule-content__left-done
@@ -81,6 +81,6 @@
               = button_to "編集",edit_task_path(schedule.id), class: "btn-done", method: :get
               .height8
               = button_to "完了",calendardone_path(schedule.id), class: "btn-done", id: "reload", method: :post
-    -  elsif @cale.blank?
+    -  elsif @calendar.blank?
       .index-date
         スケジュールは登録されていません。
