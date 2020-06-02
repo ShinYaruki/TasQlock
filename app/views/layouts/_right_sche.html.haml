@@ -4,55 +4,7 @@
     = link_to edit_task_path(sche.id) do
       - if sche.done == true
         .right-schedule-done
-          .right-schedule__top
-            - if sche.tag_id == 1
-              .right-schetag__1
-                = sche.tag.name
-            - elsif sche.tag_id == 2
-              .right-schetag__2
-                = sche.tag.name
-            - elsif sche.tag_id == 3
-              .right-schetag__3
-                = sche.tag.name
-            - elsif sche.tag_id == 4
-              .right-schetag__4
-                = sche.tag.name
-            - elsif sche.tag_id == 5
-              .right-schetag__5
-                = sche.tag.name
-            - elsif sche.tag_id == 6
-              .right-schetag__6
-                = sche.tag.name
-            .right-sche__time
-              = sche.starttime.strftime("%H:%M")
-              %p 〜
-              = sche.finishtime.strftime("%H:%M")
-          .right-sche__title
-            = sche.title
+          = render "/layouts/newright_sche", sche: sche
       - else
         .right-schedule
-          .right-schedule__top
-            - if sche.tag_id == 1
-              .right-schetag__1
-                = sche.tag.name
-            - elsif sche.tag_id == 2
-              .right-schetag__2
-                = sche.tag.name
-            - elsif sche.tag_id == 3
-              .right-schetag__3
-                = sche.tag.name
-            - elsif sche.tag_id == 4
-              .right-schetag__4
-                = sche.tag.name
-            - elsif sche.tag_id == 5
-              .right-schetag__5
-                = sche.tag.name
-            - elsif sche.tag_id == 6
-              .right-schetag__6
-                = sche.tag.name
-            .right-sche__time
-              = sche.starttime.strftime("%H:%M")
-              %p 〜
-              = sche.finishtime.strftime("%H:%M")
-          .right-sche__title
-            = sche.title
+          = render "/layouts/newright_sche", sche: sche
